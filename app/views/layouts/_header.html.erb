@@ -2,10 +2,10 @@
   <div class="container">
     <%= link_to t("header.sample_app"), root_path, id: "logo" %>
     <nav>
-      <ul class="menu nav navbar-nav navbar-right">
-        <li><%= link_to t("header.home"), root_path %></li>
-        <li><%= link_to t("header.help"), help_path %></li>
-        <li><%= link_to t("header.login"), "#" %></li>
+      <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to t("header.home"), root_path, {class: "menu"} %></li>
+        <li><%= link_to t("header.help"), help_path, {class: "menu"} %></li>
+        <li><%= link_to t("header.login"), "#", {class: "menu"} %></li>
       </ul>
     </nav>
   </div>
