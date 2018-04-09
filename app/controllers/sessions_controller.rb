@@ -25,7 +25,18 @@ class SessionsController < ApplicationController
     @user = User.find_by email: params[:session][:email].downcase
   end
 
-  def check_remember
+  def activated_user
+    if @user.activated?
+      log_in @user
+      remember_user
+      redirect_back_or @user
+    else
+      flash[:warning] = t "flash.session_warning"
+      redirect_to root_url
+    end
+  end
+
+  def remember_user
     if params[:session][:remember_me] == Settings.users.is_remember
       remember @user
     else
