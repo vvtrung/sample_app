@@ -1,3 +1,27 @@
 <% provide :title, t(".new_title") %>
 <h1><%= t ".new_h1" %></h1>
-<p><%= t ".new_content" %></p>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(@user, url: signup_path) do |f| %>
+      <%= render "shared/error_messages" %>
+      <div class="form-group">
+        <%= f.label :name %>
+        <%= f.text_field :name, class: "form-control" %>
+      </div>
+      <div class="form-group">
+        <%= f.label :email %>
+        <%= f.email_field :email, class: "form-control" %>
+      </div>
+      <div class="form-group">
+        <%= f.label :password %>
+        <%= f.password_field :password, class: "form-control" %>
+      </div>
+      <div class="form-group">
+        <%= f.label :password_confirmation, t(".confirmation") %>
+        <%= f.password_field :password_confirmation, class: "form-control" %>
+      </div>
+
+      <%= f.submit t(".create_account"), class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
