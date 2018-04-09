@@ -2,8 +2,8 @@ en:
   hello: "Hello world"
   base_title: "Ruby on Rails Tutorial Sample App"
   flash:
-    success: "Welcome to the Sample App"
-    danger: "Invalid email/password combination"
+    create_success: "Welcome to the Sample App"
+    session_danger: "Invalid email/password combination"
   error_signup: "User invalid"
   shared_error:
     one: "The form contains %{count} error."
@@ -61,10 +61,11 @@ en:
       new_title: "Sign up"
       new_h1: "Sign up"
       new_content: "This will be a signup page for new users."
-      create_account: "Create my account"
+      create_account: "Create account"
       confirmation: "Confirmation"
   sessions:
     new:
       new_title: "Log in"
       new_user: "New User?"
       sign_up: "Sign up"
+      remember_me: "Remember me on this computer"

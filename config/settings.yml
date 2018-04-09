@@ -3,3 +3,4 @@ users:
   password_min_length: 6
   name_max_length: 50
   size_gravatar: 80
+  is_remember: "1"
