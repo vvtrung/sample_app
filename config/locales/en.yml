@@ -32,8 +32,7 @@ en:
       about_title: "About"
       about_h1: "About"
       about_content: "The %{link_to_tutorial} is a %{link_to_book} and
-        %{link_to_screencast}
-        to teach web development with %{link_to_rails}
+        %{link_to_screencast} to teach web development with %{link_to_rails}
         This is the sample application for the tutorial."
       rails_tutorial: "Ruby on Rails Tutorial"
       book: "book"
