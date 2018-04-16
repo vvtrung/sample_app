@@ -1,13 +1,26 @@
 en:
   hello: "Hello world"
   base_title: "Ruby on Rails Tutorial Sample App"
+  header:
+    sample_app: "Sample App"
+    home: "Home"
+    help: "Help"
+    login: "Log in"
+  footer:
+    about: "About"
+    contact: "Contact"
+    news: "News"
+    rails_tutorial: "Ruby on Rails Tutorial"
+    michael_hartl: "Michael Hartl"
+    small_text: "The %{link_to_rails} by %{link_to_michaelhartl}"
   static_pages:
     home:
       home_title: "Home"
-      home_h1: "Sample App"
+      home_h1: "Welcome to the Sample App"
       rails_tutorial: "Ruby on Rails Tutorial"
-      home_content: "This is the home page for the %{link_to_rails} sample
-        application."
+      home_content: "This is the home page for the %{link_to_rails}
+        sample application."
+      sign_up: "Sign up now!"
     help:
       help_title: "Help"
       help_h1: "Help"
@@ -32,3 +45,8 @@ en:
       contact_page: "Contact Page"
       contact_content: "Contact the Ruby on Rails Tutorial about the sample app
         at the %{link_to_contact}"
+  users:
+    new:
+      new_title: "Sign up"
+      new_h1: "Sign up"
+      new_content: "This will be a signup page for new users."
