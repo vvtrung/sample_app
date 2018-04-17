@@ -1,6 +1,12 @@
 en:
   hello: "Hello world"
   base_title: "Ruby on Rails Tutorial Sample App"
+  flash:
+    success: "Welcome to the Sample App"
+  error_signup: "User invalid"
+  shared_error:
+    one: "The form contains %{count} error."
+    other: "The form contains %{count} errors."
   header:
     sample_app: "Sample App"
     home: "Home"
@@ -49,3 +55,5 @@ en:
       new_title: "Sign up"
       new_h1: "Sign up"
       new_content: "This will be a signup page for new users."
+      create_account: "Create my account"
+      confirmation: "Confirmation"
