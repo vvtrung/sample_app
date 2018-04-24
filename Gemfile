@@ -12,6 +12,11 @@ gem "rails-controller-testing"
 gem "rails", "~> 5.1.4"
 # Use ActiveModel has_secure_password
 gem "bcrypt", "3.1.11"
+# User faker
+gem "faker", "1.7.3"
+# Panigation
+gem "will_paginate", "3.1.6"
+gem "bootstrap-will_paginate", "1.0.0"
 # Use jquery
 gem "jquery-rails"
 # Use bootstrap
