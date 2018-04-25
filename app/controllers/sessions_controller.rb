@@ -5,7 +5,9 @@ class SessionsController < ApplicationController
 
   def create
     if @user && @user.authenticate(params[:session][:password])
-      activated_user
+      log_in @user
+      check_remember
+      redirect_back_or @user
     else
       flash.now[:danger] = t "flash.session_danger"
       render :new
@@ -23,18 +25,7 @@ class SessionsController < ApplicationController
     @user = User.find_by email: params[:session][:email].downcase
   end
 
-  def activated_user
-    if @user.activated?
-      log_in @user
-      remember_user
-      redirect_back_or @user
-    else
-      flash[:warning] = t "flash.session_warning"
-      redirect_to root_url
-    end
-  end
-
-  def remember_user
+  def check_remember
     if params[:session][:remember_me] == Settings.users.is_remember
       remember @user
     else
