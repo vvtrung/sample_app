@@ -6,6 +6,8 @@ git_source(:github) do |repo_name|
 end
 # Use gem config
 gem "config"
+# User gem figaro
+gem "figaro"
 # Use rails controller testing
 gem "rails-controller-testing"
 # Bundle edge Rails instead: gem "rails", github: "rails/rails"
@@ -50,8 +52,13 @@ group :development, :test do
   # Call "byebug" anywhere in the code to stop execution and get a debugger console
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
   # Adds support for Capybara system testing and selenium driver
+  gem "sqlite3"
   gem "capybara", "~> 2.13"
   gem "selenium-webdriver"
+end
+
+group :production do
+  gem "pg"
 end
 
 group :development do
