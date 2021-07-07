@@ -9,6 +9,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    @microposts = @user.microposts.paginate(page: params[:page])
     return if @user
     flash[:danger] = t "error.signup"
     redirect_to root_path
@@ -19,11 +20,11 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new user_params
+    @user = User.new(user_params)
     if @user.save
-      log_in @user
-      flash[:success] = t "flash.create_success"
-      redirect_to @user
+      @user.send_activation_email
+      flash[:info] = t "flash.create_info"
+      redirect_to root_url
     else
       render :edit
     end
@@ -46,6 +47,20 @@ class UsersController < ApplicationController
     redirect_to users_url
   end
 
+  def following
+    @title = t "shared.stats.following"
+    find_user
+    @users = @user.following.paginate(page: params[:page])
+    render :show_follow
+  end
+
+  def followers
+    @title = t "shared.stats.followers"
+    find_user
+    @users = @user.followers.paginate(page: params[:page])
+    render :show_follow
+  end
+
   private
 
   def user_params
@@ -62,7 +77,7 @@ class UsersController < ApplicationController
 
   def correct_user
     find_user
-    redirect_to root_url unless current_user?(@user)
+    redirect_to root_url unless current_user? @user
   end
 
   def admin_user
@@ -71,6 +86,6 @@ class UsersController < ApplicationController
 
   def find_user
     @user = User.find_by params[:id]
-    redirect_to root_url unless exists_user?(@user)
+    redirect_to root_url unless exists_user? @user
   end
 end

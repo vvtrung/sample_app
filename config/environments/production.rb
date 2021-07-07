@@ -92,11 +92,11 @@ Rails.application.configure do
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp
   ActionMailer::Base.smtp_settings = {
-    :address        => "smtp.gmail.com",
-    :domain         => "mail.google.com",
-    :port           => 587,
-    :user_name      => "votiensy1996@gmail.com",
-    :password       => "trung1996",
+    :address => "smtp.gmail.com",
+    :domain => "mail.google.com",
+    :port => 587,
+    :user_name => ENV["mail.username"],
+    :password => ENV["mail.password"],
     :authentication => :plain,
     :enable_starttls_auto => true
   }
