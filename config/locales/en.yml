@@ -3,10 +3,21 @@ en:
   base_title: "Ruby on Rails Tutorial Sample App"
   flash:
     create_success: "Welcome to the Sample App"
+    create_info: "Please check your email to activate your account."
     session_danger: "Invalid email/password combination"
+    sessions_warning: "Account not activated.
+      Check your email for the activation link."
     update_success: "Profile updated"
     login_danger: "Please log in."
     delete_success: "User deleted"
+    activated_sucsses: "Account activated!"
+    activated_danger: "Invalid activation link"
+    password_reset_info: "Email sent with password reset instructions"
+    password_reset_danger: "Email address not found"
+    password_reset_success: "Password has been reset."
+    expiration_danger: "Password reset has expired."
+    create_micopost_succsess: "Micropost created!"
+    delete_micropost_success: "Micropost deleted"
   error_signup: "User invalid"
   shared_error:
     one: "The form contains %{count} error."
@@ -36,6 +47,7 @@ en:
       home_content: "This is the home page for the %{link_to_rails}
         sample application."
       sign_up: "Sign up now!"
+      micropost_feed: "Micropost Feed"
     help:
       help_title: "Help"
       help_h1: "Help"
@@ -76,9 +88,45 @@ en:
       index_title: "All users"
       delete: "delete"
       confirm: "Are you sure?"
+    user_info:
+      profile: "view my profile"
+    show:
+      microposts: "Microposts"
   sessions:
     new:
       new_title: "Log in"
       new_user: "New User?"
       sign_up: "Sign up"
       remember_me: "Remember me on this computer"
+      forgot_password: "Forgot password?"
+  user_mailer:
+    activate: "Activate"
+    activate_text: "Welcome to the Sample App!
+      Click on the link below to activate your account:"
+    reset_password: "Reset password"
+    reset_password_text: "<p>To reset your password click the link below:</p>
+      %{link_to_reset} <p>This link will expire in two hours.</p>
+      <p>If you did not request your password to be reset,
+      please ignore this email and your password will stay as it is.</p>"
+    account_activation_text: "Hi %{name},
+      Welcome to the Sample App!
+      Click on the link below to activate your account:"
+    password_reset_text: "To reset your password click the link below:
+      %{reset_url} This link will expire in two hours.
+      If you did not request your password to be reset,
+      please ignore this email and your password will stay as it is."
+  password_resets:
+    new:
+      new_title: "Forgot password"
+      button_text: "Submit"
+    edit:
+      edit_title: "Reset password"
+      confirmation: "Confirmation"
+      button_text: "Update password"
+  micropost:
+    form:
+      textarea_placeholder: "Compose new micropost..."
+      button_text: "Post"
+    delete: "delete"
+    confirm: "You sure?"
+    time_ago: "Posted %{time_ago} ago."

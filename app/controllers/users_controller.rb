@@ -32,7 +32,7 @@ class UsersController < ApplicationController
   def edit; end
 
   def update
-    if @user.update(user_params)
+    if @user.update user_params
       flash[:success] = t "flash.update_success"
       redirect_to @user
     else
@@ -62,7 +62,7 @@ class UsersController < ApplicationController
 
   def correct_user
     find_user
-    redirect_to root_url unless current_user?(@user)
+    redirect_to root_url unless current_user? @user
   end
 
   def admin_user
@@ -71,6 +71,6 @@ class UsersController < ApplicationController
 
   def find_user
     @user = User.find_by params[:id]
-    redirect_to root_url unless exists_user?(@user)
+    redirect_to root_url unless exists_user? @user
   end
 end
